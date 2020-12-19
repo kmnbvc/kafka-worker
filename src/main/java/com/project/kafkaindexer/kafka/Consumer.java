@@ -2,7 +2,6 @@ package com.project.kafkaindexer.kafka;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -10,14 +9,11 @@ import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
-
 @Service
-@ConditionalOnProperty(value = "example.kafka.consumer-enabled", havingValue = "true")
 public class Consumer {
-
     private final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
-    @KafkaListener(topics = {"INPUT_DATA"})
+    @KafkaListener(topics = {"test"})
     public void consume(final @Payload String message,
                         final @Header(KafkaHeaders.OFFSET) Integer offset,
                         final @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String key,

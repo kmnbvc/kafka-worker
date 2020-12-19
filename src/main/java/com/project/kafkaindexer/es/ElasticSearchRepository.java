@@ -1,4 +1,4 @@
-package com.project.kafkaindexer;
+package com.project.kafkaindexer.es;
 
 public class ElasticSearchRepository {
 }

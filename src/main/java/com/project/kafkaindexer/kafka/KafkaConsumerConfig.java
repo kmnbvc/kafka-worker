@@ -1,7 +1,11 @@
 package com.project.kafkaindexer.kafka;
 
+
+import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
 
 @EnableKafka
-public class KafkaSettings {
+@Configuration
+public class KafkaConsumerConfig {
+
 }
