@@ -14,15 +14,9 @@ public class Consumer {
     private final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
     @KafkaListener(topics = {"test"})
-    public void consume(final @Payload String message,
-                        final @Header(KafkaHeaders.OFFSET) Integer offset,
-                        final @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String key,
-                        final @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition,
-                        final @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
-                        final @Header(KafkaHeaders.RECEIVED_TIMESTAMP) long ts,
-                        final Acknowledgment acknowledgment
-    ) {
-        logger.info(String.format("#### -> Consumed message -> TIMESTAMP: %d\n%s\noffset: %d\nkey: %s\npartition: %d\ntopic: %s", ts, message, offset, key, partition, topic));
-        acknowledgment.acknowledge();
+    public void consume(final @Payload String message) {
+        //logger.info(String.format("#### -> Consumed message -> TIMESTAMP: %d\n%s\noffset: %d\nkey: %s\npartition: %d\ntopic: %s", ts, message, offset, key, partition, topic));
+        System.out.println("consume " + message);
+        //acknowledgment.acknowledge();
     }
 }

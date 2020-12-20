@@ -19,7 +19,8 @@ services:
     depends_on:
       - zookeeper
   postgres:
-    image: debezium/postgres:9.6
+    build:
+      context: ./database
     container_name: postgres
     ports:
       - 5432:5432
