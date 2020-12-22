@@ -7,11 +7,9 @@
     "database.port": "5432",
     "database.user": "postgres",
     "database.password": "postgres",
-    "database.dbname" : "postgres",
+    "database.dbname" : "test_db",
     "database.server.name": "dbserver1",
-    "table.include.list": "public.inventory",
     "plugin.name": "wal2json",
-    "table.whitelist": "public.source_table",
-    "schema.whitelist": "inventory"
+    "table.whitelist": "public.*"
   }
 }
